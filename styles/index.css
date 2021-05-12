@@ -1,0 +1,44 @@
+:root {
+  --border-radius: 5px;
+}
+
+* {
+  margin: 0 auto;
+}
+
+header {
+  display: flex;
+  background-color: darkseagreen;
+  justify-content: space-between;
+  color: #fafafa;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.product-item {
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: 1px solid black;
+  width: 200px;
+  border-radius: 10px;
+}
+
+.buy-btn {
+  border-radius: var(--border-radius);
+}
+
+.btn-cart {
+  border-radius: var(--border-radius);
+}
+
+.products {
+  gap: 10px;
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+/*# sourceMappingURL=index.css.map */
