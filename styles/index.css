@@ -16,7 +16,7 @@ header {
 }
 
 .goods-list {
-  display: none;
+  display: flex;
 }
 
 .product-item {
