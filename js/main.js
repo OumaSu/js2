@@ -12,7 +12,7 @@ const app = new Vue({
         imgCart: 'https://placehold.it/50x100',
         products: [],
         imgProduct: 'https://placehold.it/200x150',
-        apiErrors: []
+        apiErrors: ['111', '222', '333']
     },
     methods: {
         getJson(url) {
@@ -20,7 +20,6 @@ const app = new Vue({
                 .then(result => result.json())
                 .catch(error => {
                     this.apiErrors.push(error)
-                    console.log(error);
                 })
         },
         addProduct(item) {
@@ -37,7 +36,6 @@ const app = new Vue({
                     }
                 }).catch(error => {
                 this.apiErrors.push(error)
-                console.log(error);
             })
         },
         remove(item) {
@@ -52,8 +50,12 @@ const app = new Vue({
                     }
                 }).catch(error => {
                 this.apiErrors.push(error)
-                console.log(error);
             })
+        },
+        closeMessage(message) {
+            console.log(this.apiErrors);
+            console.log(message);
+            this.apiErrors = this.apiErrors.filter(m => m != message);
         },
         filter(userSearch) {
             let regexp = new RegExp(userSearch, 'i');
@@ -68,7 +70,6 @@ const app = new Vue({
                 }
             }).catch(error => {
             this.apiErrors.push(error)
-            console.log(error);
         });
         this.getJson(`${API + this.catalogUrl}`)
             .then(data => {
@@ -78,7 +79,6 @@ const app = new Vue({
                 }
             }).catch(error => {
             this.apiErrors.push(error)
-            console.log(error);
         });
         this.getJson(`getProducts.json`)
             .then(data => {
@@ -88,7 +88,6 @@ const app = new Vue({
                 }
             }).catch(error => {
             this.apiErrors.push(error)
-            console.log(error);
         })
     }
 

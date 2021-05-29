@@ -20,6 +20,7 @@
         </div>
     </header>
     <main>
+        <error-messages_block :messages="apiErrors" :visibility="apiErrors" @close-message="closeMessage"></error-messages_block>
         <products :products="filtered" :img="imgProduct" @add-product="addProduct"></products>
     </main>
 </div>
